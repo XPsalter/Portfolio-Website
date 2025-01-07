@@ -1,0 +1,86 @@
+#realtimeclock {    
+    font-size: smaller;
+    color: #a01548; 
+    line-height: 1.2; 
+    text-align: center;
+}
+
+.Site{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "python"
+    "robo"
+    "Inno"
+    "general";
+}
+
+img{
+    max-height: 30vh;
+}
+
+#Python{
+    grid-area: python;
+    text-align: center;
+}
+#Robotics{
+    grid-area: robo;
+    text-align: center;
+}
+#Innovation{
+    grid-area: Inno;
+    text-align: center;
+}
+
+#General{
+    grid-area: general;
+    text-align: center;
+}
+
+@media screen and (min-width:768px) { /* Navbar is default column, changes to row when >= 480px */
+
+    .Site{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    ". python ."
+    "robo robo ."
+    ". Inno Inno"
+    ". general .";
+    gap: 5vh;
+    text-align: center;
+    }
+
+    #Robotics{
+        grid-area: robo;
+        text-align: center;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "cert cert_desc";
+        gap: 5vh;
+        text-align: left;
+    }
+    #Innovation{
+        grid-area: Inno;
+        text-align: center;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "idea idea_desc";
+        gap: 5vh;
+        text-align: right;
+    }
+
+    .cert{
+        grid-area: cert;
+    }
+    .cert_desc{
+        grid-area: cert_desc;
+    }
+    .idea{
+        grid-area: idea;
+    }
+    .idea_desc{
+        grid-area: idea_ desc;
+    }
+}

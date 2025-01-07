@@ -1,0 +1,98 @@
+fieldset {
+    min-width: 200px;
+    margin: 10px auto;
+    width: 50%;
+    padding:1rem;
+    background-color: rgb(166, 152, 209);   /*the color code can be expressed in #rrggbbtt in hex where tt is ff if 100% opaque */
+    border: 5px solid rgb(255, 220, 252); /*the color code can also be expressed in rgba way where 0.3 is 30% opaque */
+    border-radius: 0.75rem;
+}
+
+fieldset label {
+    color: rgb(145, 9, 9);
+}
+
+img {
+    max-height: 20vh;
+}
+
+#grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "contact"
+    "resume";
+    gap: 1vh;
+    text-align: center;
+}
+
+.contact{
+    grid-area: contact;
+}
+.resume{
+    grid-area: resume;
+}
+.download{
+    color: #003380;
+    text-decoration: none;  
+    font-size: 3vh;
+}
+
+.contact div a, .contact div a:visited, .contact div a:hover{
+    color: #003380;
+    text-decoration: none;
+}
+
+@media screen and (min-width:768px) { /* Navbar is default column, changes to row when >= 480px */
+
+    fieldset {
+        min-width: 200px;
+        margin: 10px auto;
+        width: 80%;
+    }
+    #grid{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "contact resume";
+        gap: 1vh;
+        text-align: center;
+    }
+
+    .Gmail{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "image info";
+        gap: 0.5vh;
+        text-align: center;
+        align-items: bottom;
+    }
+    .Whatsapp{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "image info";
+        gap: 0.5vh;
+        text-align: center;
+        align-items: bottom;
+    }
+    .Facebook{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "image info";
+        gap: 0.5vh;
+        text-align: center;
+        align-items: bottom;
+    }
+
+    .link_img{
+        grid-area: image;
+        text-align: right;
+    }
+    .link{
+        grid-area: info;
+        font-size: 3vh;
+        text-align: left;
+    }
+}
