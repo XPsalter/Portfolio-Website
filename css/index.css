@@ -1,0 +1,74 @@
+#realtimeclock {    
+    font-size: smaller;
+    color: #a01548; 
+    line-height: 1.2; 
+    text-align: center;
+}
+
+#main{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+    "title"
+    "name"
+    "picture"
+    "desc";
+}
+.title
+{
+    grid-area: title;
+    text-align: center;
+    font-size : 3vh;
+    color : #220126;
+    -webkit-text-stroke: 0.01vh #f3acd2;
+}
+.name
+{
+    grid-area: name;
+    font-family : Constantia;
+    font-weight : bold;
+    font-size : 3vh;
+    color : #220126;
+    -webkit-text-stroke: 0.1vh #376CBC;
+}
+#its_me{
+    grid-area: picture;
+}
+#Portrait{
+    max-height: 30vh;
+}
+
+.desc{
+    grid-area: desc;
+    text-align: center;
+}
+.desc p{
+    font-size: 2vh;
+}
+
+@media screen and (min-width:768px) { /* Navbar is default column, changes to row when >= 480px */
+
+    #main{
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    ". title ."
+    "name name picture"
+    "desc desc picture";
+    gap: 1vh;
+    text-align: center;
+    }
+    .name{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "user real";
+        gap: 0.5vh;
+        text-align: center;
+    }
+    #user{
+        grid-area: user;
+    }
+    #real{
+        grid-area: real;
+    }
+}
